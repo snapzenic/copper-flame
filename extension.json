@@ -1,0 +1,29 @@
+{
+  "$": "ime.extension.theme",
+  "meta": {
+    "id": "com.snapzenic.copperflame",
+    "version": "1.0.0",
+    "title": "Copper Flame",
+    "description": "🔥 A deep copper–orange FlorisBoard theme, with bordered & borderless variants.",
+    "keywords": ["copper", "orange", "dark", "flame"],
+    "homepage": "https://github.com/snapzenic/copper-flame",
+    "issueTracker": "https://github.com/snapzenic/copper-flame/issues",
+    "maintainers": ["snapzenic"],
+    "license": "MIT"
+  },
+  "themes": [
+    {
+      "id": "copper_flame_borderless",
+      "label": "Copper Flame (Borderless)",
+      "authors": ["snapzenic"],
+      "isNight": true,
+      "isBorderless": true
+    },
+    {
+      "id": "copper_flame_bordered",
+      "label": "Copper Flame (Bordered)",
+      "authors": ["snapzenic"],
+      "isNight": true
+    }
+  ]
+}
