@@ -1,7 +1,7 @@
 {
   "$": "ime.extension.theme",
   "meta": {
-    "id": "com.snapzenic.copperflame",
+    "id": "snapzenic.copperflame",
     "version": "1.0.0",
     "title": "Copper Flame",
     "description": "🔥 A deep copper–orange FlorisBoard theme, with bordered & borderless variants.",
