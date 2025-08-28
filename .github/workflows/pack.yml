@@ -1,0 +1,48 @@
+name: 🚀 Pack & Release Copper Flame
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "📦 Release version (e.g. v1.0.0)"
+        required: true
+
+permissions:
+  contents: write
+  packages: write
+
+jobs:
+  build-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🕒 Set build date
+        id: build_date
+        run: echo "date=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_OUTPUT
+
+      - name: 🛠️ Install ZIP tool
+        run: sudo apt-get update && sudo apt-get install -y zip
+
+      - name: 📦 Build .flex package
+        run: |
+         mkdir -p dist
+         zip -r "dist/copper-flame-${{ github.event.inputs.version }}-${{ steps.build_date.outputs.date }}.flex" extension.json stylesheets/
+    
+      - name: 🚀 Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.event.inputs.version }}
+          name: "🔥 Copper Flame ${{ github.event.inputs.version }} (Build ${{ steps.build_date.outputs.date }})"
+          body: |
+            ✨ **Copper Flame Release** ✨
+            
+            🔖 Version: **${{ github.event.inputs.version }}**  
+            🕒 Build date: `${{ steps.build_date.outputs.date }}`  
+          draft: false
+          prerelease: false
+          files: dist/*.flex
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
