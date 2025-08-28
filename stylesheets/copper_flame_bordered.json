@@ -7,10 +7,10 @@
     "--on-background": "rgba(255,125,50,1)",
     "--on-surface": "rgba(255,170,80,1)",
     "--border": "rgba(255,90,30,1)",
-    "--shape": "cut-corner(100%,0%,50%,100%)",
-    "--shape-variant": "cut-corner(4%,4%,4%,4%)",
-    "--up": "cut-corner(50%,50%,50%,50%)",
-    "--down": "cut-corner(25%,25%,25%,25%)"
+    "--shape": "rounded-corner(50%,50%,50%,50%)",
+    "--shape-variant": "rounded-corner(12dp,12dp,12dp,12dp)",
+    "--up": "rounded-corner(50%,50%,50%,50%)",
+    "--down": "rounded-corner(25%,25%,25%,25%)"
   },
   "window": { "background": "var(--background)" },
   "key": {
